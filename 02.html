@@ -3,30 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Vue入门</title>
-
+    <title>v-once指令</title>
     <style>
         [v-cloak] {
             display: none;
-        }
-
-        .active {
-            color: red;
         }
     </style>
 </head>
 
 <body>
     <div id="app" v-cloak>
-        <h2 :class='{active:isActive}'>{{msg}}</h2>
+        <h2 v-once>{{msg}}</h2>
+        <h2>{{msg}}</h2>
     </div>
     <script src="./Vue/js/vue.js"></script>
     <script>
         const vm = new Vue({
             el: '#app',
             data: {
-                msg: 'Hello',
-                isActive: true
+                msg: 'Hello'
             }
         })
     </script>
